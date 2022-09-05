@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap') ;
+
+.texto {
+  background-image: linear-gradient(90deg, white 0%, lightgreen 80%, darkblue 100%);
+  border: 10px ridge rgb(79, 203, 219);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 400px;
+}
+
+.ajuste {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.texto1 {
+  align-items: center;
+  display: flex;
+  gap: 150px;
+  justify-content: flex-start;
+}
+
+.foto {
+  border-radius: 10px;
+  display: block;
+  height: 100%;
+  margin: auto;
+  width: 100%;
+}
+
+.container-foto {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.carde {
+  background-image: url('https://thumbs.dreamstime.com/b/textura-de-papel-antiga-5668357.jpg  ');
+  border: 10px ridge rgb(79, 79, 219);
+  color: white;
+  height: 400px;
+  width: 290px;
+}
+
+.botao {
+  align-items: baseline;
+  align-self: center;
+  display: flex;
+  width: 100%;
+}
+
+.centraliza {
+  background-image: url('https://gifs.eco.br/wp-content/uploads/2021/10/imagens-e-gifs-do-ceu-estrelado-0.gif');
+  display: flex;
+  height: 42vw;
+  justify-content: center;
+}
+
+.texto-h1 {
+  color: rgb(238, 196, 10);
+  font-family: Roboto , sans-serif;
+  text-align: center;
+  text-shadow: 2px 2px black;
+}
+
+.cardfeitos {
+  display: flex;
+  flex-grow: 1;
+  gap: 15px;
+}
+
+.container-bot {
+  text-align: center;
+}
+
+.p {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  text-shadow: 2px 2px rgb(161, 9, 9);
+}
+
+.desc {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.658);
+  border: 5px ridge rgba(5, 5, 5, 0.514);
+  color: black;
+  display: flex;
+  font-size: 10px;
+  height: 70px;
+  justify-content: center;
+  margin: auto;
+}
+
+.foti {
+  background-color: gray;
+  border: 10px ridge rgb(79, 214, 219);
+  height: 150px;
+  margin: auto;
+  width: 200px;
+}

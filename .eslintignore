@@ -1,2 +1,2 @@
-**/*.spec.js
-/cypress
+**/*.test.js 
+src/index.js

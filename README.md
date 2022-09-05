@@ -1,681 +1,880 @@
-### Termos de acordo
+# Boas-vindas ao repositório do projeto Tryunfo!
 
-Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
+Para realizar o projeto, atente-se a cada passo descrito a seguir e, se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
 
----
+Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ (PR) para colocar seus códigos.
 
-# Boas vindas ao repositório do projeto Trybewarts Wizarding School! :mage:
+# Termos e acordos
 
-Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
-
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir desse repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
-
----
-
-# Sumário
-
-* [Habilidades](#habilidades)
-* [Entregáveis](#entregáveis)
-  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
-  - [Desenvolvimento](#desenvolvimento)
-  - [Data de entrega](#data-de-entrega)
-* [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
-    - [Antes de começar a desenvolver:](#antes-de-começar-a-desenvolver)
-    - [Durante o desenvolvimento](#durante-o-desenvolvimento)
-* [Como desenvolver](#como-desenvolver)
-  - [Observações técnicas](#observações-técnicas)
-  - [ESLint e Stylelint](#eslint-e-stylelint)
-  - [Cypress](#cypress)
-* [Requisitos do projeto](#requisitos-do-projeto)
-  - [Lista de requisitos obrigatórios:](#lista-de-requisitos-obrigatórios)
-    - [1. Crie uma barra verde na parte superior da página](#1-crie-uma-barra-verde-na-parte-superior-da-página)
-    - [2. Adicione o logotipo da Trybewarts com a classe `trybewarts-header-logo` na barra superior](#2-adicione-o-logotipo-da-trybewarts-com-a-classe-trybewarts-header-logo-na-barra-superior)
-    - [3. Acrescente um formulário de login no canto direito da barra superior contendo os inputs de email, senha e um botão de login](#3-acrescente-um-formulário-de-login-no-canto-direito-da-barra-superior-contendo-os-inputs-de-email-senha-e-um-botão-de-login)
-    - [4. Crie um título com o texto `Trybewarts` centralizado dentro do `Header`](#4-crie-um-título-com-o-texto-trybewarts-centralizado-dentro-do-header)
-    - [5. Adicione um formulário no corpo da página](#5-adicione-um-formulário-no-corpo-da-página)
-    - [6. Faça com que o eixo principal do formulário seja vertical](#6-faça-com-que-o-eixo-principal-do-formulário-seja-vertical)
-    - [7. Adicione a logo da Trybewarts no lado direito da página](#7-adicione-a-logo-da-trybewarts-no-lado-direito-da-página)
-    - [8. Acrescente ao formulário com id `evaluation-form` os inputs de `nome, sobrenome e email`](#8-acrescente-ao-formulário-com-id-evaluation-form-os-inputs-de-nome-sobrenome-e-email)
-    - [9. Acrescente ao formulário um select com o id `house` contendo as opções `Gitnória`, `Reactpuff`, `Corvinode` e `Pytherina`](#9-acrescente-ao-formulário-um-select-com-o-id-house-contendo-as-opções-gitnória-reactpuff-corvinode-e-pytherina)
-    - [10. Posicione os campos de `Nome` e `Sobrenome` para que fiquem em linha](#10-posicione-os-campos-de-nome-e-sobrenome-para-que-fiquem-em-linha)
-    - [11. Posicione os campos de `Email` e `Casa` para que fiquem em linha](#11-posicione-os-campos-de-email-e-casa-para-que-fiquem-em-linha)
-    - [12. Acrescente ao formulário um campo de entrada para qual família a pessoa estudante se identifica](#12-acrescente-ao-formulário-um-campo-de-entrada-para-qual-família-a-pessoa-estudante-se-identifica)
-    - [13. Crie campos de entrada do tipo `checkbox` contendo seis opções](#13-crie-campos-de-entrada-do-tipo-checkbox-contendo-seis-opções)
-    - [14. Crie campo de entrada para avaliar de 1 a 10 o nível de satisfação com a Trybewarts](#14-crie-campo-de-entrada-para-avaliar-de-1-a-10-o-nível-de-satisfação-com-a-trybewarts)
-    - [15. Crie uma textarea com o id `textarea` e uma label com a classe `textarea` contendo o número máximo de caracteres igual à 500](#15-crie-uma-textarea-com-o-id-textarea-e-uma-label-com-a-classe-textarea-contendo-o-número-máximo-de-caracteres-igual-à-500)
-    - [16. Crie um campo de entrada do tipo `checkbox` com o id `agreement` para validar as informações](#16-crie-um-campo-de-entrada-do-tipo-checkbox-com-o-id-agreement-para-validar-as-informações)
-    - [17. Crie um botão de Enviar para submeter o formulário](#17-crie-um-botão-de-enviar-para-submeter-o-formulário)
-    - [18. Faça com que o botão `Enviar` seja habilitado somente após a checkbox do requisito 16 ser selecionada](#18-faça-com-que-o-botão-enviar-seja-habilitado-somente-após-a-checkbox-do-requisito-16-ser-selecionada)
-    - [19. Crie um rodapé no final da página](#19-crie-um-rodapé-no-final-da-página)
-  - [Lista de requisitos bônus:](#lista-de-requisitos-bônus)
-    - [20. Crie um contador com o ID `counter` contendo o número de caracteres disponíveis no textarea, variando de 500 até 0, que deverá ser atualizado a medida que algo for digitado na textarea](#20-crie-um-contador-com-o-id-counter-contendo-o-número-de-caracteres-disponíveis-no-textarea-variando-de-500-até-0-que-deverá-ser-atualizado-a-medida-que-algo-for-digitado-na-textarea)
-    - [21. Faça com que ao clicar no botão `Enviar`, o conteúdo do formulário seja substituído pelas informações preenchidas](#21-faça-com-que-ao-clicar-no-botão-enviar-o-conteúdo-do-formulário-seja-substituído-pelas-informações-preenchidas)
-  - [Lista de requisitos não avaliativos:](#lista-de-requisitos-não-avaliativos)
-    - [22. Preencha o arquivo feedback.md . Aproveite o espaço para deixar seus feedbacks sobre o projeto.](#22-preencha-o-arquivo-feedbackmd--aproveite-o-espaço-para-deixar-seus-feedbacks-sobre-o-projeto)
-    - [23. Realize o desenvolvimento da versão mobile do formulário Trybewarts.](#23-realize-o-desenvolvimento-da-versão-mobile-do-formulário-trybewarts)
-* [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento)
-  - [Code Review (opcional)](#code-review-opcional)
-  - [Dicas](#dicas)
-  - [Revisando um pull request](#revisando-um-pull-request)
-* [Avisos finais](#avisos-finais)
-
-# Habilidades
-
-Neste projeto, verificamos se você é capaz de:
-
-* Criar formulários em HTML;
-* Utilizar CSS Flexbox para criar layouts flexíveis;
-* Criar regras CSS específicas para serem aplicadas a dispositivos móveis;
-* Construir páginas que alteram o seu layout de acordo com a orientação da tela;
-
----
+Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta e do Manual da Pessoa Estudante da Trybe.
 
 # Entregáveis
 
-Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
+<details>
+  <summary><strong>🤷🏽‍♀️ Como entregar</strong></summary><br />
 
-Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://app.betrybe.com/course/fundamentals/git) sempre que precisar!
+  Para entregar o seu projeto você deverá criar um *Pull Request* neste repositório.
 
-## O que deverá ser desenvolvido
+  Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://app.betrybe.com/course/4d67f5b4-34a6-489f-a205-b6c7dc50fc16/) e nosso [Blog - Git & GitHub](https://blog.betrybe.com/tecnologia/git-e-github/) sempre que precisar!
+</details>
 
-Neste projeto, você irá desenvolver uma página de formulário da Escola de Magia de Trybewarts, em que as pessoas estudantes poderão enviar seus feedbacks sobre ela. O tema desse projeto é baseado na obra 'Harry Potter', de J. K. Rowling, já que programar é o mais próximo que podemos chegar de algo **verdadeiramente mágico**! Mas não se preocupe se não tiver conhecimento sobre o universo da obra original, pois criamos nossa própria versão da Escola de Bruxaria e você terá todas as informações necessárias para a construção do projeto nesse **README**!
+<details>
+  <summary><strong>👨‍💻 O que deverá ser desenvolvido</strong></summary><br />
 
-## Desenvolvimento
+  Neste projeto você vai desenvolver um jogo no estilo Super Trunfo! Ao utilizar essa aplicação uma pessoa usuária deverá ser capaz de:
 
-⚠️ É importante que seus arquivos tenham exatamente estes nomes!
+  * Criar um baralho com o tema livre;
 
-O seu Pull Request deverá conter os arquivos `index.html`, `style.css` e `script.js`, que conterão seu código HTML, CSS e JavaScript, respectivamente.
+  * Adicionar e remover uma carta do baralho;
 
-Você pode adicionar outros arquivos se julgar necessário. Qualquer dúvida, procure a monitoria.
+  * Visualizar todas as cartas que foram adicionadas ao baralho;
 
-## Data de entrega
+  * Jogar com o baralho criado.
 
-* Projeto em equipe.
-* Serão `1` dia de projeto.
-* Data de entrega para avaliação final do projeto: `12/05/2022 14:00`.
+  ### Protótipo do projeto
 
-# Instruções para entregar seu projeto
+  Você pode acessar um protótipo no link abaixo:
 
-### Antes de começar a desenvolver:
+  https://www.figma.com/file/psAYBgwjQ1pQqBe3wJvljt/Tryunfo
+</details>
 
-⚠️ **Esse projeto tem um fluxo um pouco diferente dos outros. Os passos 1 a 6 devem ser feitos por uma pessoa da equipe (a que vai criar a branch de trabalho). As outras pessoas devem fazer apenas o passo 1 e depois mudar para a branch criada pela primeira pessoa. Exemplo:**
+<details>
+  <summary><strong>:memo: Habilidades</strong></summary><br />
 
-```bash
-git checkout joao-silva-trybewarts
-```
+  Neste projeto, verificamos se você é capaz de:
 
-1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-022-a-project-trybewarts.git`.
-  * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-022-a-project-trybewarts`
+  * Ler o estado de um componente e usá-lo para alterar o que exibimos no browser
 
-2. Instale as dependências e inicialize o projeto
-  * Instale as dependências:
-    * `npm install`
+  * Inicializar um componente, dando a ele um estado pré-definido
 
-3. Crie uma branch a partir da branch `main`
-  * Verifique que você está na branch `main`
-    * Exemplo: `git branch`
-  * Se não estiver, mude para a branch `main`
-    * Exemplo: `git checkout main`
-  * Agora, crie uma branch onde você vai guardar os `commits` do seu projeto
-    * Você deve criar uma branch no seguinte formato: `nome-sobrenome-nome-do-projeto`
-    * Exemplo: `git checkout -b joao-silva-trybewarts`
+  * Atualizar o estado de um componente
 
-4. Crie na raiz do projeto os arquivos que você precisará desenvolver:
-  * Verifique que você está na raiz do projeto
-    * Exemplo: `pwd` -> o retorno vai ser algo como _/Users/joao/code/**sd-022-a-project-trybewarts**_
+  * Capturar eventos utilizando a sintaxe do React
 
-  * Crie os arquivos index.html, style.css e script.js
-    * Exemplo: `touch index.html style.css script.js`
+  * Criar formulários utilizando sintaxe JSX com as tags: `input`, `textarea`, `select`, `form`, `checkbox`
 
-5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
-  * Verifique que as mudanças ainda não estão no _stage_
-    * Exemplo: `git status` (devem aparecer listados os novos arquivos em vermelho)
+  * Transmitir informações de componentes filhos para componentes pais via callbacks
+</details>
 
-  * Adicione o novo arquivo ao _stage_ do Git
-    * Exemplo:
-      * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-      * `git status` (devem aparecer listados os arquivos em verde)
+<details>
+  <summary><strong>🗓 Data de Entrega</strong></summary><br />
+  
+  * Este projeto é individual;
+  * São `3` dias de projeto;
+  * Data para entrega final do projeto: `05/07/2022 14:10`.
 
-  * Faça o `commit` inicial
-    * Exemplo:
-      * `git commit -m 'iniciando o projeto. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
-      * `git status` (deve aparecer uma mensagem como _nothing to commit_ )
+</details>
 
-6. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin joao-silva-trybewarts`
+# Orientações
 
-7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-022-a-project-trybewarts/pulls)
-  * Clique no botão verde _"New pull request"_
-  * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
-  * Clique no botão verde _"Create pull request"_
-  * Adicione uma descrição para o _Pull Request_ no seguinte formato: `[Joao Silva e Maria Souza] Trybewarts`, e clique no botão verde _"Create pull request"_
-  * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-022-a-project-trybewarts/pulls) e confira que o seu _Pull Request_ está criado
+<details>
+  <summary><strong>‼️ Antes de começar a desenvolver</strong></summary><br />
+
+  1. Clone o repositório
+
+  - Use o comando: `git clone git@github.com:tryber/sd-022-a-project-tryunfo.git`.
+  - Entre na pasta do repositório que você acabou de clonar:
+    - `cd sd-022-a-project-tryunfo`
+
+  2. Instale as dependências
+
+  - `npm install`.
+  
+  3. Crie uma branch a partir da branch `master`
+
+  - Verifique que você está na branch `master`
+    - Exemplo: `git branch`
+  - Se não estiver, mude para a branch `master`
+    - Exemplo: `git checkout master`
+  - Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
+    - Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
+    - Exemplo: `git checkout -b joaozinho-sd-022-a-project-tryunfo`
+
+  4. Adicione as mudanças ao _stage_ do Git e faça um `commit`
+
+  - Verifique que as mudanças ainda não estão no _stage_
+    - Exemplo: `git status` (deve aparecer listada a pasta _joaozinho_ em vermelho)
+  - Adicione o novo arquivo ao _stage_ do Git
+    - Exemplo:
+      - `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
+      - `git status` (deve aparecer listado o arquivo _joaozinho/README.md_ em verde)
+  - Faça o `commit` inicial
+    - Exemplo:
+      - `git commit -m 'iniciando o projeto x'` (fazendo o primeiro commit)
+      - `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
+
+  5. Adicione a sua branch com o novo `commit` ao repositório remoto
+
+  - Usando o exemplo anterior: `git push -u origin joaozinho-sd-022-a-project-tryunfo`
+
+  6. Crie um novo `Pull Request` _(PR)_
+
+  - Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-022-a-project-tryunfo/pulls)
+  - Clique no botão verde _"New pull request"_
+  - Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
+  - Coloque um título para a sua _Pull Request_
+    - Exemplo: _"Cria tela de busca"_
+  - Clique no botão verde _"Create pull request"_
+  - Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
+  - **Não se preocupe em preencher mais nada por enquanto!**
+  - Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-022-a-project-tryunfo/pulls) e confira que o seu _Pull Request_ está criado
+
+</details>
+
+<details>
+  <summary><strong>⌨️ Durante o desenvolvimento</strong></summary><br />
+
+  - Faça `commits` das alterações que você fizer no código regularmente
+
+  - Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
+
+  - Os comandos que você utilizará com mais frequência são:
+    1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
+    2. `git add` _(para adicionar arquivos ao stage do Git)_
+    3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
+    4. `git push -u origin nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
+    5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
+
+</details>
+
+<details>
+  <summary><strong>🤝 Depois de terminar o desenvolvimento (opcional)</strong></summary><br />
+
+  Para sinalizar que o seu projeto está pronto para o _"Code Review"_, faça o seguinte:
+
+  - Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
+
+    - No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
+
+    - No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
+
+    - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-022-a`.
+
+  Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+</details>
+
+<details>
+  <summary><strong>🕵🏿 Revisando um pull request</strong></summary><br />
+
+  Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
+
+</details>
+
+<details>
+  <summary><strong>🎛 Linter</strong></summary><br />
+
+  Para garantir a qualidade do código, vamos utilizar neste projeto os linters `ESLint` e `StyleLint`.
+  Assim o código estará alinhado com as boas práticas de desenvolvimento, sendo mais legível
+  e de fácil manutenção! Para rodá-los localmente no projeto, execute os comandos abaixo:
+
+  ```bash
+    npm run lint
+    npm run lint:styles
+  ```
+
+  ⚠️ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS.
+  ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠️
+
+  Em caso de dúvidas, confira o material do course sobre [ESLint e Stylelint](https://app.betrybe.com/course/real-life-engineer/eslint).
+</details>
+
+<details>
+  <summary><strong>🛠 Testes</strong></summary><br />
+
+  Para avaliar o projeto iremos utilizar [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) para execução dos testes.
+
+  Esse _framework_ de testes utiliza algumas marcações no código para verificar a solução proposta, uma dessas marcações é o atributo `data-testid` e faremos uso dele aqui.
+
+  Na descrição dos requisitos (logo abaixo) será pedido que seja feita a adição de atributos `data-testid` nos elementos _HTML_. Vamos a um exemplo para deixar claro essa configuração:
+
+  Se o requisito pedir "crie um botão e adicione o id de teste (ou `data-testid`) com o valor `my-action`, você pode criar:
+
+  ```html
+  <button data-testid="my-action"></button>
+  ```
+  
+  ou
+
+  ```html
+  <a data-testid="my-action"></a>
+  ```
+
+  Ou seja, o atributo `data-testid="my-action"` servirá para o React Testing Library(RTL) identificar o elemento e dessa forma, conseguiremos realizar testes focados no comportamento da aplicação.
+
+  Em alguns requisitos, utilizamos o `getByRole` para poder selecionar os elementos de forma semântica. Portanto atente-se às instruções de cada requisito. Por exemplo, se o requisito pedir explicitamente um `button`, você deverá utilizar exatamente esse elemento.
+
+  Afim de verificar a solução proposta, você pode executar todos os testes localmente, basta executar:
+
+  ```bash
+  npm test
+  ```
+
+  ### Dica: desativando testes
+
+  Especialmente no início, quando a maioria dos testes está falhando, a saída após executar os testes é extensa. Você pode desabilitar temporariamente um teste utilizando a função `skip` junto à função `it`. Como o nome indica, esta função "pula" um teste. Veja um exemplo:
+
+  ```js
+  it.skip("Será validado se o campo de filtro por nome renderiza na tela", () => {
+    render(<App />)
+    const filterNameInput = screen.getByTestId(/name-filter/i);
+    expect(filterNameInput).toBeInTheDocument();
+  });
+  ```
+  ![image](skip-image.png)
+
+  Uma estratégia é pular todos os testes no início e ir implementando um teste de cada vez, removendo dele a função `skip`.
+
+  Você também pode rodar apenas um arquivo de teste, por exemplo:
+
+  ```bash
+  npm test 01.Form.test.js
+  ```
+
+  ou
+
+  ```bash
+  npm test 01.Form
+  ```
+
+  Uma outra forma para contornar esse problema é a utilização da função `.only` após o `it`. Com isso, será possível que apenas um requisito rode localmente e seja avaliado.
+
+  ```js
+  it.only("Será validado se o campo de filtro por nome renderiza na tela", () => {
+    render(<App />)
+    const filterNameInput = screen.getByTestId(/name-filter/i);
+    expect(filterNameInput).toBeInTheDocument();
+  });
+  ```
+  ![image](only-image.png)
+
+  ⚠️ **O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?**
+</details>
+
+<details>
+  <summary><strong>:convenience_store: Desenvolvimento </strong></summary><br />
+
+  Você deve desenvolver uma aplicação em React com manipulação de estados em classes. Essa aplicação simulará um jogo de **Super Trunfo**, desde a criação das cartas do seu baralho até a funcionalidade de jogar.
+
+  Na renderização das cartas, sua aplicação deverá possuir três filtros de listagem de cartas: filtro por **nome**, por **raridade** e por **Super Trunfo**. Os filtros **nome** e **raridade** são acumulativos. O filtro **Super Trunfo** funciona de forma independente.
+
+  O tema do seu baralho é **livre**, então explore a sua criatividade! Mas use seu bom senso para a criação do seu baralho. Lembre-se do código de Conduta e do Manual da Pessoa Estudante da Trybe.
+
+  ### :bulb: Renderização condicional :bulb:
+
+  Em alguns requisitos será necessária a utilização de renderização condicional. Você pode verificar a documentação do React [Renderização Condicional](https://pt-br.reactjs.org/docs/conditional-rendering.html).
+
+  Este comportamento é utilizado no React para renderizar, ou não, determinado componente de acordo com uma condição _booleana_.
+
+  No exemplo abaixo, o estado `isActiveButton` começa como `false`, e ao clicar no botão `Clique em mim!`, mudamos esse estado para `true`.
+  Na condição da renderização, quando o estado for `false`, renderizamos o parágrafo `Não está ativo!` e quando for `true`, renderizamos o parágrafo `Está ativo!`.
+
+  ```js
+  import React from "react"
+
+  class Componente extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isActiveButton: false,
+    };
+  }
+
+    render() {
+      const { isActiveButton } = this.state;
+      return (
+        <div>
+          <button onClick={() => this.setState({isActiveButton: true})}>Clique em mim!</button>
+          {
+            isActiveButton ? <p>Está ativo!</p> : <p>Não está ativo!</p>
+          }
+        </div>
+      )
+    }
+  }
+  ```
+
+  No caso acima, temos duas possibilidades, ativo ou não, ou seja, duas renderizações. Mas se for de apenas uma renderização, como por exemplo, renderizar somente se o tamanho do _array_ for maior do que 0, podemos utilizar o `&&`: 
+
+  ```js
+  ...
+  {
+    array.length > 0 && <p>Array não vazio!</p>
+  }
+  ...
+  ```
+</details>
+
+<details>
+  <summary><strong>:information_source: Informações Adicionais </strong></summary><br />
+
+  ### Informações sobre o Super Trunfo
+
+  O Super Trunfo é um jogo de cartas que ficou muito popular no Brasil entre as décadas de 80 e 90, mas que faz bastante sucesso até hoje. Suas regras são bastante simples, por isso ele é considerado um jogo fácil de jogar. Apesar de ter regras simples, cada baralho  de Super Trunfo pode ter um tema diferente, o que o torna um jogo bastante divertido.
+
+  Originalmente, o jogo de Super Trunfo é formado por um baralho de 32 cartas. Cada carta representa um item relacionado ao tema do jogo. Em cada carta também existe uma lista com características daquele item e cada característica possui um valor numérico. 
+
+  Para começar o jogo, as cartas devem ser embaralhadas e divididas igualmente para cada participante. Em cada rodada cada pessoa pega somente a primeira carta do seu monte. Na primeira rodada uma pessoa escolhe qual característica quer comparar com as cartas das outras pessoas que estão jogando. Ganha quem tiver o maior número nessa característica. A pessoa que ganhou a rodada recebe as cartas das outras pessoas e escolhe qual característica quer comparar na próxima rodada. O jogo termina quando alguma pessoa tiver todas as cartas do baralho.
+
+  Em cada baralho existe uma (e somente uma) carta Super Trunfo. Essa carta ganha de todas as outras cartas do baralho, independentemente dos valores das características.
+
+  O jogo de Super Trunfo pode ser feito com praticamente qualquer tema, mas tradicionalmente os mais comuns são: carros, países, cidades ou animais.
+
+  ### Criando, lendo, atualizando e apagando informações
+
+  Quando estamos lidando com informações, temos 4 operações principais: __Create__ (criar), __Read__ (ler), __Update__ (atualizar) e __Delete__ (apagar). Com essas quatro operações, formamos o acrônimo CRUD. Esse acrônimo é um termo que será bastante utilizado daqui para frente na sua jornada como pessoa desenvolvedora.
+
+  Nesse projeto vamos começar a lidar um pouco mais com essas operações, mas não vamos fazer todas elas. Você precisará criar, ler e apagar informações, mas não precisará desenvolver a função de editar por enquanto. Não se preocupe, pois no futuro, voltaremos a implementar essas operações e nos próximos projetos você fará um CRUD completo.
+</details>
+
+<details>
+  <summary><strong>🗣 Nos dê feedbacks sobre o projeto!</strong></summary><br />
+
+Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. 
+**Leva menos de 3 minutos!**
+
+[FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
+
+</details>
+
+<details>
+  <summary><strong>🗂 Compartilhe seu portfólio!</strong></summary><br />
+
+  Você sabia que o LinkedIn é a principal rede social profissional e compartilhar o seu aprendizado lá é muito importante para quem deseja construir uma carreira de sucesso? Compartilhe esse projeto no seu LinkedIn, marque o perfil da Trybe (@trybe) e mostre para a sua rede toda a sua evolução.
+
+</details>
+
+<details>
+  <summary><strong>:bow: Agradecimentos</strong></summary><br />
+
+  Pessoas que contribuíram com feedbacks no programa de _beta testers_ desse projeto:
+
+  - [@alanmdf](https://github.com/alanmdf);
+  - [@Aleilton](https://github.com/Aleilton);
+  - [@felipeventorim](https://github.com/felipeventorim);
+  - [@gusttavocaruso](https://github.com/gusttavocaruso);
+  - [@junglejf](https://github.com/junglejf);
+  - [@JVictorC](https://github.com/JVictorC);
+  - [@lcds90](https://github.com/lcds90);
+  - [@Murilo-Rainho](https://github.com/Murilo-Rainho);
+  - [@rafaelromanoz](https://github.com/rafaelromanoz);
+  - [@rogeriop1990cv](https://github.com/rogeriop1990cv);
+  - [@RoyMusthang](https://github.com/RoyMusthang);
+  - [@vdionysio](https://github.com/vdionysio).
+</details>
+
+# Requisitos
+
+:warning: **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS.** :warning:
+
+:warning: Os gifs são meramente ilustrativos para visualizar o fluxo da aplicação. Portanto, os nomes devem seguir os requisitos e não o gif. :warning:
+
+## 1. Crie o formulário que será usado para adicionar cartas ao baralho
+Crie um formulário que será utilizado para criar as cartas do seu baralho.
+
+  * Crie um componente chamado `Form` dentro da pasta `src/components`.
+
+  * Renderize o componente `Form` dentro do componente principal `App`. 
+
+  * <details><summary>Crie os seguintes itens dentro do component <code>Form</code>:</summary>
+  
+    :bulb: **Dica:** Você pode criar um componente de input. Lembre-se de sempre ter uma label associada para cada input.
+
+    - um campo do tipo `text` que contenha o atributo `data-testid="name-input"`. Este campo será usado para inserir o nome da carta.
+
+    - um campo do tipo `textarea` que contenha o atributo `data-testid="description-input"`. Este campo será usado para inserir a descrição da carta.
+
+    - um campo do tipo `number` que contenha o atributo `data-testid="attr1-input"`. Este campo será usado para inserir o primeiro atributo da carta. Ele é livre para você adicionar o atributo que mais combinar com o seu baralho.
+
+    - um campo do tipo `number` que contenha o atributo `data-testid="attr2-input"`. Este campo será usado para inserir o segundo atributo da carta. Ele é livre para você adicionar o atributo que mais combinar com o seu baralho.
+
+    - um campo do tipo `number` que contenha o atributo `data-testid="attr3-input"`. Este campo será usado para inserir o terceiro atributo da carta. Ele é livre para você adicionar o atributo que mais combinar com o seu baralho.
+
+    - um campo do tipo `text` que contenha o atributo `data-testid="image-input"`. Este campo será usado para inserir o caminho para imagem da carta.
+
+    - um campo do tipo `select` que contenha o atributo `data-testid="rare-input"`. Este campo será usado para inserir a raridade da carta e deverá ter as `options`: `normal`, `raro` e `muito raro` (é importante que as opções estejam nessa ordem).
+
+    - um campo do tipo `checkbox` que contenha o atributo `data-testid="trunfo-input"`. Este campo será usado para inserir se a carta é o Super Trunfo.
+    
+    - um `button`que contenha o atributo  `data-testid="save-button"` e que tenha o texto "Salvar".
+  </details>
+
+  <details><summary><strong>Imagem exemplo:</strong></summary>
+
+  ![requisito-1](images/requisito-1.png)
+
+  </details><br />
+
+<details>
+  <summary><strong>O que será verificado</strong></summary><br />
+
+  - Será validado se existe um input texto que possui o `data-testid="name-input"`.
+  
+  - Será validado se existe um input textarea que possui o `data-testid="description-input"`.
+  
+  - Será validado se existe um input number que possui o `data-testid="attr1-input"`.
+  
+  - Será validado se existe um input number que possui o `data-testid="attr2-input"`.
+  
+  - Será validado se existe um input number que possui o `data-testid="attr3-input"`.
+  
+  - Será validado se existe um input texto que possui o `data-testid="image-input"`.
+
+  - Será validado se existe um input select que possui o `data-testid="rare-input"` com as `options`: `normal`, `raro` e `muito raro`, nesta ordem.
+
+  - Será validado se existe um input checkbox que possui o `data-testid="trunfo-input"`.
+
+  - Será validado se existe um botão que possui o `data-testid="save-button"`.
+</details>
 
 ---
 
-### Durante o desenvolvimento
+## 2. Adicione as props necessárias ao componente de formulário 
 
-* Faça `commits` das alterações que você fizer no código regularmente;
+  * <details><summary>O componente <code>Form</code> deverá receber as seguintes props:</summary>
+  
+    - `cardName`, uma string;
+    - `cardDescription`, uma string;
+    - `cardAttr1`, uma string;
+    - `cardAttr2`, uma string;
+    - `cardAttr3`, uma string;
+    - `cardImage`, uma string;
+    - `cardRare`, uma string;
+    - `cardTrunfo`, um boolean;
+    - `hasTrunfo`, um boolean;
+    - `isSaveButtonDisabled`, um boolean;
+    - `onInputChange`, uma callback;
+    - `onSaveButtonClick`, uma callback;
+  </details>
 
-* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto;
 
-* Os comandos que você utilizará com mais frequência são:
+  * <details><summary>As props do componente <code>Form</code> deverão ser utilizadas conforme o indicado abaixo:</summary>
 
-  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_;
+    * Campo `name-input`: a propriedade `value` deve receber o valor da prop `cardName` e a prop `onChange` deve receber o valor da prop `onInputChange`.
 
-  2. `git add` _(para adicionar arquivos ao stage do Git)_;
+    * Campo `description-input`: a propriedade `value` deve receber o valor da prop `cardDescription` e a prop `onChange` deve receber o valor da prop `onInputChange`.
 
-  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_;
+    * Campo `attr1-input`: a propriedade `value` deve receber o valor da prop `cardAttr1` e a prop `onChange` deve receber o valor da prop `onInputChange`.
 
-  5. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_;
+    * Campo `attr2-input`: a propriedade `value` deve receber o valor da prop `cardAttr2` e a prop `onChange` deve receber o valor da prop `onInputChange`.
 
-  4. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_.
+    * Campo `attr3-input`: a propriedade `value` deve receber o valor da prop `cardAttr3` e a prop `onChange` deve receber o valor da prop `onInputChange`.
 
----
+    * Campo `image-input`: a propriedade `value` deve receber o valor da prop `cardImage` e a prop `onChange` deve receber o valor da prop `onInputChange`.
 
-# Como desenvolver
+    * Campo `rare-input`: a propriedade `value` deve receber o valor da prop `cardRare` e a prop `onChange` deve receber o valor da prop `onInputChange`.
 
-Você irá desenvolver este projeto em **equipe** e é fundamental que siga as instruções do repositório.
+    * Campo `trunfo-input`: a propriedade `checked` deve receber o valor da prop `cardTrunfo` e a prop `onChange` deve receber o valor da prop `onInputChange`.
 
-Todos os requisitos tem como base a página a seguir, que representa um formulário de avaliação da **Escola de Magia de Trybewarts**. Use a imagem do site como base e respeite o posicionamento dos elementos, mas quanto às cores e elementos de design que não interfiram nesses aspectos sinta-se livre para deixar a sua criatividade fluir!
+    * Botão `save-button`: a propriedade `disabled` deve receber o valor da prop `isSaveButtonDisabled` e a prop `onClick` deve receber o valor da prop `onSaveButtonClick`.
 
-![Página da Trybewarts](./pagina-principal.png)
+    **:bulb: Obs:** por enquanto a prop `hasTrunfo` ainda não foi utilizada, mas não se preocupe, pois ela será usada em breve.
+  </details><br />
 
----
+<details>
+  <summary><strong>O que será verificado</strong></summary><br />
 
-## Observações técnicas
+  - Será validado se o campo de nome recebe o valor da prop `cardName` e se a callback `onInputChange` é chamada quando o campo sofre alguma alteração.
 
-Alguns requisitos devem seguir um padrão pré-estabelecido para que os testes automáticos funcionem corretamente, leia-os atentamente e siga à risca o que for pedido. Em particular, **atente-se para os nomes de _ids_ que alguns elementos de seu projeto devem possuir**.
+  - Será validado se o campo de descrição recebe o valor da prop `cardDescription` e se a callback `onInputChange` é chamada quando o campo sofre alguma alteração.
 
-⚠️ **Alguns requisitos pedem para utilizar Flexbox. Tenha atenção no que é solicitado caso vá usar algum framework CSS para que os requisitos sejam atendidos.**
+  - Será validado se o campo do atributo 1 recebe o valor da prop `cardAttr1` e se a callback `onInputChange` é chamada quando o campo sofre alguma alteração.
 
-O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação.
+  - Será validado se o campo do atributo 2 recebe o valor da prop `cardAttr2` e se a callback `onInputChange` é chamada quando o campo sofre alguma alteração.
 
-* Os requisitos do seu projeto são avaliados automaticamente, sendo utilizada a resolução de tela de `1366 x 768` (1366 pixels de largura por 768 pixels de altura).
+  - Será validado se o campo do atributo 3 recebe o valor da prop `cardAttr3` e se a callback `onInputChange` é chamada quando o campo sofre alguma alteração.
 
-  * ⚠️ Logo, recomenda-se desenvolver seu projeto usando a mesma resolução, via instalação [deste plugin](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh?hl=en) do `Chrome` para facilitar a configuração da resolução.
+  - Será validado se o campo de imagem recebe o valor da prop `cardImage` e se a callback `onInputChange` é chamada quando o campo sofre alguma alteração.
 
-* Atente-se para o tamanho das imagens que você utilizará neste projeto. **Não utilize imagens com um tamanho maior que _500Kb_.**
+  - Será validado se o campo de raridade recebe o valor da prop `cardRare` e se a callback `onInputChange` é chamada quando o campo sofre alguma alteração.
 
-  * ⚠️ Utilize uma ferramenta [como esta](https://picresize.com/pt) para redimensionar as imagens.
+  - Será validado se o campo de Super Trufo recebe o valor da prop `cardTrunfo` e se a callback `onInputChange` é chamada quando o campo sofre alguma alteração.
 
-  * Caso a avaliação falhe com alguma mensagem de erro parecida com `[409:0326/130838.878602:FATAL:memory.cc(22)] Out of memory. size=4194304`, provavelmente as imagens que você está utilizando estão muito grandes. Tente redimensiona-las para um tamanho menor.
+  - Será validado se o botão de salvar é habilitado se o valor da prop `isSaveButtonDisabled` for `false`.
 
-* Para verificar se a sua avaliação foi computada com sucesso, você pode verificar os **detalhes da execução do avaliador**.
+  - Será validado se o botão de salvar é desabilitado se o valor da prop `isSaveButtonDisabled` for `true`.
 
-  * Na página do seu _Pull Request_, acima do "botão de merge", procure por _**"Evaluator job"**_ e clique no link _**"Details"**_;
-
-  * Na página que se abrirá, procure pela linha _**"Cypress evaluator step"**_ e clique nela;
-
-  * Analise os resultados a partir da mensagem _**"(Run Starting)"**_;
-
-  * Caso tenha dúvidas, consulte [este vídeo](https://vimeo.com/420861252) ou procure a monitoria.
-
-* Você tem liberdade para adicionar novos comportamentos ao seu projeto, seja na forma de aperfeiçoamentos em requisitos propostos ou novas funcionalidades, **desde que tais comportamentos adicionais não conflitem com os requisitos propostos**.
-
-  * Em outras palavras, você pode fazer mais do que for pedido, mas nunca menos.
-
-* Contudo, tenha em mente que **nada além do que for pedido nos requisitos será avaliado**. _Esta é uma oportunidade de você exercitar sua criatividade e experimentar com os conhecimentos adquiridos._
-
----
-
-## ESLint e Stylelint
-
-Para garantir a qualidade do código, vamos utilizar neste projeto os linters `ESLint` e `Stylelint`.
-Assim o código estará alinhado com as boas práticas de desenvolvimento, sendo mais legível
-e de fácil manutenção! Para rodá-los localmente no projeto, execute os comandos abaixo:
-
-```bash
-npm run lint
-npm run lint:styles
-```
-
-Em caso de dúvidas, confira o material do course sobre [ESLint e Stylelint](https://app.betrybe.com/course/real-life-engineer/eslint).
-
-⚠️ Lembre-se que o seu projeto só será avaliado se estiver passando pelos **checks** dos **linters**.
+  - Será validado se a callback `onSaveButtonClick` é chamada quando o botão é clicado. 
+</details>
 
 ---
 
-## Cypress
+## 3. Crie e renderize o componente Card com as props necessárias
 
-Cypress é uma ferramenta de teste de front-end desenvolvida para a web. Você pode rodar o cypress localmente para verificar se seus requisitos estão passando, para isso execute o um dos seguintes comandos:
+  * <details><summary>Crie um componente com o nome <code>Card</code> na pasta <code>src/components</code> e renderize-o  no componente principal <code>App</code>. O componente <code>Card</code> deve receber as seguintes props: </summary>
+  
+    - `cardName`, uma string;
+    - `cardDescription`, uma string;
+    - `cardAttr1`, uma string;
+    - `cardAttr2`, uma string;
+    - `cardAttr3`, uma string;
+    - `cardImage`, uma string;
+    - `cardRare`, uma string;
+    - `cardTrunfo`, um boolean;
+  </details>
 
-Para executar os testes apenas no terminal:
+  * <details><summary>Renderize o componente <code>Card</code> dentro do componente principal <code>App</code>:</summary>
 
-```bash
-npm test
-```
+    * Exiba o valor da prop `cardName`. Você pode usar qualquer tag HTML que faça sentido, desde que ela tenha o atributo `data-testid="name-card"`.
 
-Para executar os testes e vê-los rodando em uma janela de navegador:
+    * Exiba a imagem usando a tag HTML `img`, com o atributo `src` que tenha o valor da prop `cardImage` e o atributo `alt` com o valor da prop `cardName`. Essa imagem também deve ter o atributo `data-testid="image-card"`
 
-```bash
-npm run cypress:open
+    * Exiba o valor da prop `cardDescription`. Você pode usar qualquer tag HTML que faça sentido, desde que ela tenha o atributo `data-testid="description-card"`.
+    
+    * Exiba o valor da prop `cardAttr1`. Você pode usar qualquer tag HTML que faça sentido, desde que ela tenha o atributo `data-testid="attr1-card"`.
 
-# ou
-npx cypress open
-```
+    * Exiba o valor da prop `cardAttr2`. Você pode usar qualquer tag HTML que faça sentido, desde que ela tenha o atributo `data-testid="attr2-card"`
+    * Exiba o valor da prop `cardAttr3`. Você pode usar qualquer tag HTML que faça sentido, desde que ela tenha o atributo `data-testid="attr3-card"`.
 
-Após executar um dos dois comandos acima, será aberta uma janela de navegador e então basta clicar no nome do arquivo de teste que quiser executar (project.spec.js), ou para executar todos os testes clique em Run all specs
+    * Exiba o valor da prop `cardRare`. Você pode usar qualquer tag HTML que faça sentido, desde que ela tenha o atributo `data-testid="rare-card"`.
 
-Você também pode assistir a [este](https://vimeo.com/539240375/a116a166b9) vídeo 😉🎙
+    * Exiba o texto `Super Trunfo` somente quando o valor da prop `cardTrunfo` for `true`. Você pode usar qualquer tag HTML que faça sentido, desde que ela tenha o atributo `data-testid="trunfo-card"`.
 
-**Para rodar o cypress é preciso ter rodado o comando npm install anteriormente.**
+    **Dica: Você pode utilizar renderização condicional para renderizar ou não o texto do super trunfo.**
+  </details>
+
+<details><summary>Imagem Exemplo:</summary>
+
+  ![requisito-3](images/requisito-3.png)
+</details><br />
+
+<details>
+  <summary><strong>O que será verificado</strong></summary><br />
+  
+  - Será validado se o componente `data-testid="name-card"` é exibido e possui o valor da prop `cardName`.
+  - Será validado se o componente `data-testid="image-card"` é exibido e possui o atributo `src` com o valor da prop `cardImage` e o atributo alt com o valor da prop `cardName`.
+  - Será validado se o componente `data-testid="description-card"` é exibido e possui o valor da prop `cardDescription`.
+  - Será validado se o componente `data-testid="attr1-card"` é exibido e possui o valor da prop `cardAttr1`.
+  - Será validado se o componente `data-testid="attr2-card"` é exibido e possui o valor da prop `cardAttr2`.
+  - Será validado se o componente `data-testid="attr3-card"` é exibido e possui o valor da prop `cardAttr3`.
+  - Será validado se o componente `data-testid="rare-card"` é exibido e possui o valor da prop `cardRare`.
+  - Será validado se o componente `data-testid="trunfo-card"` é exibido quando a prop `cardTrunfo` tiver o valor `true`.
+  - Será validado se o componente `data-testid="trunfo-card"` **não** é exibido quando a prop `cardTrunfo` tiver o valor `false`.
+</details>
 
 ---
 
-# Requisitos do projeto
+## 4. Crie o preview da carta que está sendo criada pelo formulário
 
-**Dica:** Caso você faça o download de bibliotecas externas, utilize o diretório libs (a partir da raiz do projeto) para colocar os arquivos (*.css, *.js, etc...) baixados.
+Até o momento você criou dois componentes que recebem `props`, agora está na hora de criar o estado dos componentes.
+Os componentes `Form` e `Card` irão compartilhar o mesmo estado para exibir as mesmas informações (isso já te dá uma dica de onde o estado deve estar, não é mesmo?).
+Quando alguma informação é digitada em algum campo do formulário, o componente `Card` deve exibir a mesma informação em tempo real, criando um preview da carta antes de ela ser salva no baralho (a funcionalidade de salvar será feita nos próximos requisitos). 
 
-## Lista de requisitos obrigatórios:
+Você deverá usar a prop `onInputChange` para passar uma callback para lidar com os eventos de `onChange` dos inputs do formulário. Não se esqueça que os valores dos inputs (que também são passados por props) também devem ser salvos em um estado.
 
-### 1. Crie uma barra verde na parte superior da página
+**:bulb: Dica:** o mesmo estado usado para controlar os inputs do formulário podem ser passados para o componente `Card`.
 
-#### Observações técnicas:
+<details><summary><strong>Informações técnicas:</strong></summary>
 
-* Esta barra deve possuir a classe `header`
-* A classe `header` deve determinar que o elemento é um **flex container**
-* A classe `header` deve possuir a propriedade `background-color: rgb(50, 167, 145)`
+  * Ao digitar algo no campo com o `data-testid="name-input"` do formulário, o mesmo valor deverá ser renderizado no componente `Card`, no elemento com o `data-testid="name-card"`.
+  
+  * Ao digitar algo no campo com o `data-testid="description-input"` do formulário, o mesmo valor deverá ser renderizado no componente `Card`, no elemento com o `data-testid="description-card"`.
 
-#### O que será verificado:
+  * Ao digitar algo no campo com o `data-testid="image-input"` do formulário, o mesmo valor deverá ser passado para o componente `Card`, e ser usado no atributo `src` do elemento com o `data-testid="image-card"`.
 
-* Existe um elemento com a classe `header`
-* O elemento possui a propriedade CSS `display: flex`
-* O elemento possui a propriedade CSS `background-color: rgb(50, 167, 145)`
+  * Ao digitar algo no campo com o `data-testid="attr1-input"` do formulário, o mesmo valor deverá ser renderizado no componente `Card`, no elemento com o `data-testid="attr1-card"`.
 
-### 2. Adicione o logotipo da Trybewarts com a classe `trybewarts-header-logo` na barra superior
+  * Ao digitar algo no campo com o `data-testid="attr2-input"` do formulário, o mesmo valor deverá ser renderizado no componente `Card`, no elemento com o `data-testid="attr2-card"`.
 
-#### Observações técnicas:
+  * Ao digitar algo no campo com o `data-testid="attr3-input"` do formulário, o mesmo valor deverá ser renderizado no componente `Card`, no elemento com o `data-testid="attr3-card"`.
 
-* Deve existir um elemento img com a classe `trybewarts-header-logo`
-* O atributo `src` do logotipo deve apontar para `images/trybewarts-header-logo.svg`
+  * Ao selecionar algum valor no `select` com o `data-testid="rare-input"` do formulário, o mesmo valor deverá ser renderizado no componente `Card`, no elemento com o `data-testid="rare-card"`.
 
-#### O que será verificado:
+  * Quando o campo do tipo `checkbox` que possui o `data-testid="trunfo-input"` estiver `checked`, deverá ser renderizado no componente `Card` o texto `Super Trunfo` dentro do elemento com o `data-testid="trunfo-card"`.
 
-* Existe um elemento `img` com a classe `trybewarts-header-logo`
-* O elemento possui o atributo `src` apontando para `images/trybewarts-header-logo.svg`
+  **:bulb: Dica:** para campos que precisem de um valor padrão (como o campo de raridade, por exemplo) você pode iniciar o estado já com esse valor.
 
-### 3. Acrescente um formulário de login no canto direito da barra superior contendo os inputs de email, senha e um botão de login
+  ![requisito-4](images/requisito-4.png)
+</details><br />
 
-#### Observações técnicas:
+<details>
+  <summary><strong>O que será verificado</strong></summary><br />
 
-* O formulário deve ter a classe `trybewarts-login`
-* O input de **email** deverá ter o atributo `name` igual a **email** e o `placeholder` igual a **Email**
-* O input de **senha** deverá ter o atributo `name` igual a **password** e o `placeholder` igual a **Senha**
-* O botão deverá ter o texto **"Entrar"**
-* O formulário deve ser um **flex container**
-* O formulário deve estar a direita da logo
-  * **Dica:** adicione a propriedade flex que faz os elementos terem o espaçamento máximo **entre eles** no **header**
-* Ao preencher o formulário e clicar no botão, será validado que:
-  * Caso o email seja **"tryber@teste.com"** e a senha seja **"123456"** será emitido um alerta contendo o texto **"Olá, Tryber!"** 
-  * Em todos os outro casos deverá ser emitido um alerta contendo o texto **"Email ou senha inválidos."**
-
-#### O que será verificado:
-
-* Existe um elemento `form` com a classe `trybewarts-login`
-* Existe um input com o atributo `name` igual a **email** e o `placeholder` igual a **Email**
-* Existe um input com o atributo `name` igual a **password** e o `placeholder` igual a **Senha**
-* Existe um botão com o texto **"Entrar"**
-* O formulário possui a propriedade CSS `display: flex`
-* O elemento `form` está à direita da logo
-* Ao clicar no botão de login dispara um alert com o texto **"Email ou senha inválidos"**, no caso de erro de preenchimento dos dados
-* Ao clicar no botão de login dispara um alert com o texto **"Olá, Tryber!"**, no caso de preenchimento correto dos dados.
-
-### 4. Crie um título com o texto `Trybewarts` centralizado dentro do `Header`
-
-#### Observações técnicas:
-
-* Deve existir um elemento `<h1>` com o **id** `trybewarts-header-title` e com o texto **"Trybewarts"**
-* O título deverá estar centralizado na barra verde
-  * O header deve ter exatamente três elementos filhos
-  * O filho do meio deve ser o título
-
-#### O que será verificado:
-
-* Existe um elemento `h1` com o id `trybewarts-header-title` e com o texto `Trybewarts`
-* O elemento com a classe `header` deve possuir exatos `3` elementos filhos
-* O filho do meio do elemento com a classe `header` deve ser o título h1 `Trybewarts`
-
-### 5. Adicione um formulário no corpo da página
-
-#### Observações técnicas:
-
-* Deve existir um formulário com o id `evaluation-form`
-* O formulário deve estar inserido dentro de uma tag `main`
-* Tanto o formulário quanto o `main` devem ser flex containers
-* O formulário deve ter uma largura de 675px
-
-#### O que será verificado:
-
-* Existe um elemento `form` com o id `evaluation-form`
-* O elemento `form` está dentro da tag `main`
-* O elemento `main` e o `form` possuem a propriedade CSS `display: flex`
-* O elemento `form` possui a propriedade CSS `width: 675px`
-
-### 6. Faça com que o eixo principal do formulário seja vertical
-
-#### Observações técnicas:
-
-* Mude o eixo principal do formulário com id `evaluation-form` para vertical
-
-#### O que será verificado:
-
-* O elemento `evaluation-form` possui a propriedade CSS `flex-direction: column`
-
-### 7. Adicione a logo da Trybewarts no lado direito da página
-
-#### Observações técnicas:
-
-* Crie um elemento `img` com o id `trybewarts-forms-logo`
-* O atributo `src` deve apontar para `images/trybewarts-colored.svg`
-* A imagem deve possuir o estilo css `height` de `500px`
-
-#### O que será verificado:
-
-* Existe um elemento `img` com o id `trybewarts-forms-logo`
-* O elemento possui o atributo `src` apontando para `images/trybewarts-colored.svg`
-* A imagem possui o estilo css `height` igual a `500px`
-
-### 8. Acrescente ao formulário com id `evaluation-form` os inputs de `nome, sobrenome e email`
-
-#### Observações técnicas:
-
-* Deverá haver um input com o id **input-name** e placeholder **Nome**
-* Deverá haver um input com o id **input-lastname** e placeholder **Sobrenome**
-* Deverá haver um input com o id **input-email** e placeholder **Email**
-
-#### O que será verificado:
-
-* Existe um input com o id **input-name** e placeholder **Nome**
-* Existe um input com o id **input-lastname** e placeholder **Sobrenome**
-* Existe um input com o id **input-email** e placeholder **Email**
-
-### 9. Acrescente ao formulário um select com o id `house` contendo as opções `Gitnória`, `Reactpuff`, `Corvinode` e `Pytherina`
-
-#### Observações técnicas:
-
-* Deverá conter a opção com `text` e `value` igual a `Gitnória` e com o `id` igual a `gitnoria-house`
-* Deverá conter a opção com `text` e `value` igual a `Reactpuff` e com o `id` igual a `reactpuff-house`
-* Deverá conter a opção com `text` e `value` igual a `Corvinode` e com o `id` igual a `corvinode-house`
-* Deverá conter a opção com `text` e `value` igual a `Pytherina` e com o `id` igual a `pytherina-house`
-
-#### O que será verificado:
-
-* Existe um elemento `select` com o id `house`
-* Existe um elemento `option` com `text` e `value` igual a `Gitnória` e com o `id` igual a `gitnoria-house`
-* Existe um elemento `option` com `text` e `value` igual a `Reactpuff` e com o `id` igual a `reactpuff-house`
-* Existe um elemento `option` com `text` e `value` igual a `Corvinode` e com o `id` igual a `corvinode-house`
-* Existe um elemento `option` com `text` e `value` igual a `Pytherina` e com o `id` igual a `pytherina-house`
-
-### 10. Posicione os campos de `Nome` e `Sobrenome` para que fiquem em linha
-
-#### Observações técnicas:
-
-* Os campos de `Nome` e `Sobrenome` devem estar lado a lado
-
-#### O que será verificado:
-
-* O campo de `Sobrenome` está à direita do campo de `Nome`
-
-### 11. Posicione os campos de `Email` e `house` para que fiquem em linha
-
-#### Observações técnicas:
-
-* Os campos de `Email` e `house` devem estar lado a lado
-
-#### O que será verificado:
-
-* O campo de `house` está à direita do campo de `Email`
-
-### 12. Acrescente ao formulário um campo de entrada para qual família a pessoa estudante se identifica
-
-#### Observações técnicas:
-
-* Crie um elemento com o id `label-family` e o texto **"Qual sua família?"** deverá ser criado
-* Crie um `input` do tipo `radio` com o atributo `name` igual a **family** e `value` igual a **Frontend**
-* Crie um `input` do tipo `radio` com o atributo `name` igual a **family** e `value` igual a **Backend**
-* Crie um `input` do tipo `radio` com o atributo `name` igual a **family** e `value` igual a **FullStack**
-* Posicione os radio buttons para ficar abaixo um do outro, na sequência **Frontend**, **Backend** e **Fullstack**
-* Posicione os radio buttons abaixo do label
-
-#### O que será verificado:
-
-* Existe um elemento `label` com o `id` **label-family** que possui o conteúdo de texto `Qual sua família?`
-* Existe um `input` do tipo `radio` com o atributo `name` igual a **family** e `value` igual a **Frontend**
-* Existe um `input` do tipo `radio` com o atributo `name` igual a **family** e `value` igual a **Backend**
-* Existe um `input` do tipo `radio` com o atributo `name` igual a **family** e `value` igual a **FullStack**
-* Os inputs do tipo `radio` estão um abaixo do outro na sequência **Frontend**, **Backend** e **Fullstack**
-* Os inputs do tipo `radio` estão abaixo do texto da label
-
-### 13. Crie campos de entrada do tipo `checkbox` contendo seis opções
-
-#### Observações técnicas:
-
-* Crie um elemento com o `id` **label-content** e o texto **"Qual conteúdo você está com mais vontade de aprender?"**
-* Crie um input do tipo `checkbox` com o value igual a **HoFs**
-* Crie um input do tipo `checkbox` com o value igual a **Jest**
-* Crie um input do tipo `checkbox` com o value igual a **Promises**
-* Crie um input do tipo `checkbox` com o value igual a **React**
-* Crie um input do tipo `checkbox` com o value igual a **SQL**
-* Crie um input do tipo `checkbox` com o value igual a **Python**
-* Posicione as checkboxes abaixo do label
-
-#### O que será verificado:
-
-* Existe um elemento `label` com o `id` **label-content** que possui um conteúdo de texto `Qual conteúdo você está com mais vontade de aprender?`
-* Existe um `input` do tipo `checkbox` com o atributo value igual a **HoFs**
-* Existe um `input` do tipo `checkbox` com o atributo value igual a **Jest**
-* Existe um `input` do tipo `checkbox` com o atributo value igual a **Promises**
-* Existe um `input` do tipo `checkbox` com o atributo value igual a **React**
-* Existe um `input` do tipo `checkbox` com o atributo value igual a **SQL**
-* Existe um `input` do tipo `checkbox` com o atributo value igual a **Python**
-* Os elementos `checkbox` então posicionados abaixo da label
-
-### 14. Crie campo de entrada para avaliar de 1 a 10 o nível de satisfação com a Trybewarts
-
-#### Observações técnicas:
-
-* Um elemento com o `id` **label-rate** e o texto **"Como você avalia a Trybewarts?"** deverá ser criado
-* O campo deve ser formado por dez radio buttons, contendo as opções de 1 a 10
-* Os radio buttons devem ter o atributo `value` com o valor de suas opções de 1 a 10.
-* Os radio buttons devem ter o atributo `name` com o valor **"rate"**
-* Posicione os radio buttons para ficar lado a lado
-
-#### O que será verificado:
-
-* Existe um elemento `label` com o `id` **label-rate** que possui um conteúdo de texto `Como você avalia a Trybewarts?`
-* Existem 10 `radio-buttons` com o atributo `name="rate"`
-* Existem 10 `radio-buttons` contendo o atributo `value` de 1 a 10  
-
-### 15. Crie uma textarea com o id `textarea` e uma label com a classe `textarea` contendo o número máximo de caracteres igual à 500
-
-#### Observações técnicas:
-
-* Uma label com a classe `textarea` e o texto **"Deixe seu comentário:"** deverá ser criado
-* O campo `textarea` deverá ter o máximo de 500 caracteres
-
-#### O que será verificado:
-
-* Existe uma `label` com a classe `textarea` e o texto `Deixe seu comentário:`
-* O elemento `textarea` possui um limite de 500 caracteres
-
-### 16. Crie um campo de entrada do tipo `checkbox` com o id `agreement` para validar as informações
-
-#### Observações técnicas:
-
-* Um rótulo (label) com o id `label-infos` e o texto **"Você concorda com o uso das informações acima?"** deverá ser criado
-* O campo deve ser formado por um checkbox
-* O campo de 'checkbox' deve possuir o ID `agreement`
-* Posicione a checkbox ao lado da label
-
-#### O que será verificado:
-
-* Existe uma label com o id `label-infos` que possui o texto `Você concorda com o uso das informações acima?`
-* Existe um input do tipo `checkbox` com o id `agreement`
-
-### 17. Crie um botão de Enviar para submeter o formulário
-
-#### Observações técnicas:
-
-* Um botão do tipo `submit` deverá ser criado
-* O botão deve possuir o ID `submit-btn`
-* Deverá conter o texto **"Enviar"**
-
-#### O que será verificado:
-
-* Existe um botão do tipo `submit` com o id `submit-btn` e o texto `Enviar`
-
-### 18. Faça com que o botão `Enviar` seja habilitado somente após a checkbox do requisito 16 ser selecionada
-
-#### Observações técnicas:
-
-* O botão deverá estar desabilitado caso a checkbox não esteja selecionada
-* O botão deverá ser habilitado caso a checkbox seja selecionada
-
-#### O que será verificado:
-
-* O botão está inicialmente desabilitado
-* O botão torna-se habilitado, ao marcar o campo com id `agreement`
-
-### 19. Crie um rodapé no final da página
-
-#### Observações técnicas:
-
-* O rodapé deverá conter o texto **"Direitos reservados à Trybewarts©"**
-
-#### O que será verificado:
-
-* Existe um elemento `footer` deve possuir o texto `Direitos reservados à Trybewarts©`
-
-## Lista de requisitos bônus:
-
-### 20. Crie um contador com o ID `counter` contendo o número de caracteres disponíveis no textarea, variando de 500 até 0, que deverá ser atualizado a medida que algo for digitado na textarea
-
-#### Observações técnicas:
-
-* O contador deverá possuir o ID `counter`
-* O contador inicialmente deve possuir o valor `500`
-* O contador deverá decrementar a medida que algo for escrito no campo `textarea`
-* O contador deverá incrementar a medida que algo for deletado no campo `textarea`
-* O elemento `textarea` deverá possuir `id="textarea"`
-
-#### O que será verificado:
-
-* Existe um elemento com o id `counter`
-* Existe um elemento com o id `textarea`
-* O preenchimento do campo de `textarea` altera o número apresentado no elemento `#counter`
-
-### 21. Faça com que, ao clicar no botão `Enviar`, o conteúdo dentro da tag `<form>` seja substituído pelas informações preenchidas pela pessoa usuária
-
-#### Observações técnicas:
-
-* Todos os campos do formulário devem ser substituídos pelas informações da pessoa usuária.
-* Deve haver um campo com o formato "Nome: Alguem Aqui"
-* Deve haver um campo com o formato "Email: email@mail.com"
-* Deve haver um campo com o formato "Casa: Casa Escolhida"
-* Deve haver um campo com o formato "Família: Família Escolhida"
-* Deve haver um campo com o formato "Matérias: Matérias, Marcadas, Aqui"
-* Deve haver um campo com o formato "Avaliação: NotaAqui"
-* Deve haver um campo com o formato "Observações: Observações aqui"
-
-#### O que será verificado:
-
-* A tag `<form>` com o id `evaluation-form` deve ser exibida na tela
-* Os `inputs` tipo `checkbox` referentes à lista de conteúdo possuem `class="subject"`
-* Ao clicar no botão de enviar, existe um texto no formato `Nome: -Nome- -Sobrenome-`
-* Ao clicar no botão de enviar, existe um texto no formato `Email: -Email-`
-* Ao clicar no botão de enviar, existe um texto no formato `Casa: -Casa-`
-* Ao clicar no botão de enviar, existe um texto no formato `Família: -Família-`
-* Ao clicar no botão de enviar, existe um texto no formato `Matérias: -Matérias Selecionadas-`
-* Ao clicar no botão de enviar, existe um texto no formato `Avaliação: -Avaliação-`
-* Ao clicar no botão de enviar, existe um texto no formato `Observações: -Observações-`
+  - Será validado se é renderizado no preview da carta o valor digitado no input Nome do formulário.
+  - Será validado se é renderizado no preview da carta o valor digitado no input Descrição do formulário.
+  - Será validado se é renderizado no preview da carta o valor digitado no input referente ao atributo 1 no formulário.
+  - Será validado se é renderizado no preview da carta o valor digitado no input referente ao atributo 2 no formulário.
+  - Será validado se é renderizado no preview da carta o valor digitado no input referente ao atributo 3 no formulário.
+  - Será validado se é renderizado no preview da carta o `data-testid="trunfo-card"` se o checkbox Super Trunfo for selecionado.
+</details>
 
 ---
 
-## Lista de requisitos não avaliativos:
+## 5. Faça a validação do botão de Salvar no formulário
 
-Esses requisitos **não** são verificáveis pelo avaliador automático.
+<details><summary>O botão que possui o atributo <code>data-testid="save-button"</code> só deve estar habilitado se todas as informações do formulário estiverem preenchidas corretamente, seguindo as seguintes regras:</summary>
 
-### 22. Preencha o arquivo feedback.md . Aproveite o espaço para deixar seus feedbacks sobre o projeto.
+  * Os campos `Nome`, `Descrição`, `Imagem` e `Raridade ` devem conter alguma informação (ou seja, os `inputs` não podem estar vazios).
 
-#### Observações técnicas:
+  * A soma dos valores dos 3 atributos (`attr1-input`, `attr2-input` e `attr3-input`) não pode ultrapassar o valor **210**.
 
-* Utilize o arquivo feedback.md para deixar comentários e sugestões sobre o projeto! Para nós, é muito importante saber se vocês tiveram uma boa experiência e se foi praticar seus conhecimentos com o Trybewarts!
+  * Cada um dos três atributos pode ter **no máximo 90 pontos cada**.
+  
+  * Os atributos não podem receber valores negativos.
+</details><br />
 
-### 23. Realize o desenvolvimento da versão mobile do formulário Trybewarts.
+<details>
+  <summary><strong>O que será verificado</strong></summary><br />
 
-#### Observações técnicas:
-
-* Utilize media queries para inserir breakpoints para telas de diferentes tamanhos.
-* Leve em conta a largura da tela e a experiência do usuário ao reorganizar o layout para dispositivos menores.
-* Tente inserir um 'menu hambúrguer' na barra superior para lidar com o login usando javascript. Se não conseguir, tente criar uma página separada de login, uma prática muito comum.
-* Deixe sua criatividade fluir! Preferimos não avaliar esse requisito justamente pra que você tenha liberdade para executar a responsividade da maneira que você achar mais agradável!
-
----
-
-# Depois de terminar o desenvolvimento
-
-#### A pessoa dona da branch deve garantir que o último commit nessa branch é seu. Pode ser feita alguma alteração que não afete o cumprimento dos requisitos para realizar o commit.
-
-As outras pessoas integrantes da equipe devem criar uma nova `branch` a partir da `branch` de trabalho _(a primeira branch criada pela equipe)_.
-
-Exemplo: 
-
-1. Use `git branch` para ter certeza de que está na branch de trabalho;
-2. Caso não esteja use `git checkout joaozinho-trybewarts-project`  para trocar de `branch`;
-3. User `git checkout -b mariazinha-trybewarts-project` para criar uma nova branch a partir da branch anterior (`joaozinnho-trybewarts-project`);
-
-**Garanta que o último commit da branch é de autoria da pessoa dona de cada branch. Novamente pode ser feita alguma alteração que não afete o cumprimento dos requisitos para realizar o commit.**
-
-1. Adicione sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin mariazinha-trybewarts-project`
-   
-2. Crie um novo `Pull Request` (PR)
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-022-a-project-trybewarts/pulls)
-  * Clique no botão verde _"New pull request"_
-  * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
-  * Clique no botão verde _"Create pull request"_
-  * Adicione uma descrição para o _Pull Request_, um título claro que o identifique, e clique no botão verde _"Create pull request"_
-  * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-022-a-project-trybewarts/pulls) e confira que o seu _Pull Request_ está criado
- 
-⚠️ **Para o seu projeto ser avaliado você deve se assegurar que o último commit na branch é da pessoa dona da branch.**
+  - Será validado se o botão `salvar` está desabilitado quando a página é renderizada pela primeira vez.
+  - Será validado se o botão `salvar` está desabilitado se o campo nome estiver vazio.
+  - Será validado se o botão `salvar` está desabilitado se o campo imagem estiver vazio.
+  - Será validado se o botão `salvar` está desabilitado se o campo descrição estiver vazio.
+  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 1 for maior que 90.
+  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 1 for menor que 0.
+  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 2 for maior que 90.
+  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 2 for menor que 0.
+  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 3 for maior que 90.
+  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 3 for menor que 0.
+  - Será validado se o botão `salvar` está desabilitado se a somatória dos campos de atributos for maior que 210.
+  - Será validado se o botão `salvar` é habilitado ao preencher todos os campos do formulário corretamente.
+</details>
 
 ---
 
-## Code Review (opcional)
+## 6. Crie a função do botão salvar
 
-Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
+<details><summary>Agora que o botão de salvar já está validado, você pode adicionar uma nova carta ao seu baralho. Isso significa que você precisará criar um novo estado na sua aplicação para salvar a lista de cartas existentes no seu baralho.</summary>
 
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
-* No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
-* No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
-* No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-022-a`.
+  :bulb: **Dica:** você pode salvar cada carta em um formato de objeto e ter um _array_ com esses objetos no seu estado.
 
-Caso tenha alguma dúvida, [aqui tem um vídeo explicativo](https://vimeo.com/362189205).
+  * Ao clicar no botão que possui o atributo `data-testid="save-button"`, as informações que foram preenchidas no formulário deverão ser salvas no estado da sua aplicação.
+  
+  * Após salvar as informações, os `inputs` do formulário `Nome`, `Descrição` e `Imagem` e o conteúdo do preview da carta deverão ser limpos.
 
-## Dicas
+  * Após salvar as informações, os três campos de atributos devem ter valor 0.
 
-* Para colocar sua página no [GitHub Pages](https://pages.github.com/), não é necessário remover o conteúdo que já está lá, você pode apenas adicionar essa nova página. Para isso, todo o conteúdo desse projeto deve ser colocado em uma pasta `/projetos/trybewarts`.
+  * Após salvar as informações, o campo `Raridade` deve conter o valor `normal`.
+</details><br />
+
+<details>
+  <summary><strong>O que será verificado</strong></summary><br />
+
+  - Será validado se os campos do formulário `Nome`, `Descrição` e `Imagem` são limpos após clicar em `salvar`.
+
+  - Será validado se o os três campos de atributos têm o valor `0` após clicar em `salvar`.
+  
+  - Será validado se o campo de `Raridade` tem o valor `normal` após clicar em `salvar`.
+</details>
 
 ---
 
-## Revisando um pull request
+## 7. Crie a validação do Super Trunfo
 
-À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests dos seus colegas. Fiquem atentos às mensagens do "Pull Reminders" no Slack!
+<details><summary>Em um baralho de Super Trunfo pode existir apenas <strong>uma carta Super Trunfo</strong>. Por isso é necessário fazer uma validação para que somente 1 carta Super Trunfo seja salva no seu baralho:</summary>
 
-Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
+  * Para que uma carta seja salva como Super Trunfo é preciso que o input com o `data-testid="trunfo-input"` esteja `checked` na hora de salvar a carta. Por isso, a validação será feita nesse campo. Para fazer essa validação, você deve usar o prop `hasTrunfo` do componente `Form`.
+
+  * Caso já exista uma carta Super Trunfo em seu baralho, o formulário de criação de carta não deverá exibir o `checkbox` `data-testid="trunfo-input"`. No seu lugar deve ser renderizada a frase: "Você já tem um Super Trunfo em seu baralho".
+
+  **Dica: Lembre-se de utilizar a renderização condicional (na seção [:convenience_store: Desenvolvimento](#orientações)) do React nesse requisito.**
+</details><br />
+
+<details>
+  <summary><strong>O que será verificado</strong></summary><br />
+
+  - Será validado se o checkbox do Super Trunfo é renderizado ao carregar a página.
+
+  - Será validado se o texto "Você já tem um Super Trunfo em seu baralho" é renderizado caso já exista uma carta Super Trunfo no baralho.
+</details>
 
 ---
 
-# Avisos finais
+## 8. Exiba a lista de cartas que estão salvas no estado
 
-Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
+Você já tem várias cartas legais em seu baralho, agora é a hora de listá-las para que você possa ver toda sua coleção!
 
-Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
+  * Renderize dentro do component `App` uma lista com todas as cartas que você tem no estado da aplicação.
+  * Garanta que sempre que uma carta for adicionada, a lista é atualizada automaticamente.
 
-O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
+:bulb: **Dica:** você pode reutilizar o componente `Card` nesse requisito. :bulb:
+
+<details><summary>Imagem Exemplo:</summary>
+
+  ![requisito-8](images/requisito-8.png)
+</details><br />
+
+<details>
+  <summary><strong>O que será verificado</strong></summary><br />
+
+  - Será validado se a carta é renderizada na página ao salvá-la.
+  - Será validado se a lista é atualizada automaticamente quando uma carta é adicionada.
+</details>
+
+---
+
+## 9. Crie um botão para remover uma carta do baralho
+
+  * <details><summary>Criar em cada carta que está sendo renderizada do seu baralho um <code>button</code> com o texto <code>Excluir</code> e o atributo <code>data-testid="delete-button"</code>.</summary>
+  
+    * A carta de _preview_ **não pode ter esse botão**.
+    
+    * Ao clicar neste botão, a carta deve ser excluída do seu baralho, ou seja, não deverá mais ser renderizada na página.
+    **Dica: Lembre-se que o baralho está sendo renderizado a partir do estado do seu componente!**
+    
+    * Se a carta excluída for uma carta Super Trunfo, o `checkbox` do formulário deverá aparecer novamente, tornando possível a criação de uma nova carta Super Trunfo.
+
+    ![requisito-9](images/requisito-9.png)
+  </details>
+
+<details>
+  <summary><strong>O que será verificado</strong></summary><br />
+
+  - Será validado se o botão `Excluir` é renderizado na tela apenas nas cartas adicionadas ao baralho.
+  - Será validado se ao adicionar uma carta e excluí-la em seguida, a carta não é renderizada.
+  - Será validado se ao adicionar duas cartas e excluir uma em seguida, a carta não é renderizada.
+  - Será validado se ao excluir uma carta Super Trunfo, o checkbox no formulário é renderizado novamente.
+</details>
+
+---
+
+# Requisitos bônus
+  
+  Sua aplicação terá três filtros de listagem de cartas: filtro por **nome**, por **raridade** e por **Super Trunfo**. Os filtros **nome** e **raridade** são acumulativos. O filtro **Super Trunfo** funciona de forma independente.
+
+## 10. Crie o filtro pelo nome da carta
+
+<details><summary>Para filtro do <strong>nome</strong>, você deverá criar um campo do tipo <code>text</code> e adicionar o atributo <code>data-testid="name-filter"</code>:</summary>
+  
+  * Este campo deve ser renderizado sempre, mesmo se não existirem cartas salvas no baralho.
+  
+  * Ao digitar neste campo, deve ser renderizado na página apenas as cartas que contenham no `nome` o texto digitado.
+
+  ![requisito-10](images/requisito-10.png)
+</details><br />
+
+<details>
+  <summary><strong>O que será verificado</strong></summary><br />
+
+  - Será validado se o campo de filtro por nome renderiza na tela.
+  - Será validado se apenas as cartas correspondentes aparecem após o filtro.
+  - Será validado se não renderiza nenhuma carta se não houver nome correspondente.
+</details>
+
+---
+
+## 11. Crie o filtro por raridade da carta
+
+<details><summary>Para filtrar por <strong>raridade</strong>, você deverá criar um campo do tipo <code>select</code> e adicionar o atributo <code>data-testid="rare-filter"</code>:</summary>
+  
+  * Este `select` deve possuir as seguintes `options`: 
+    - `todas`
+    - `normal`
+    - `raro`
+    - `muito raro`
+  
+  * Por padrão, a opção `todas` já deverá estar selecionada;
+  
+  * Ao selecionar uma das opções, apenas as cartas que possuem a raridade especificada deverão ser renderizadas. Caso esteja selecionada `todas`, não deve ter filtro de raridade aplicado na lista.
+  
+  * Se o campo do filtro `Nome` estiver preenchido, os dois filtros (por nome e por raridade) devem funcionar em conjunto.
+
+  ![requisito-11](images/requisito-11.png)
+</details><br />
+
+<details>
+  <summary><strong>O que será verificado</strong></summary><br />
+
+  - Será validado se o campo de filtro por Raridade renderiza na tela.
+  - Será validado se somente as cartas com raridade `normal` são exibidas após o filtro.
+  - Será validado se somente as cartas com raridade `raro` são exibidas após o filtro.
+  - Será validado se somente as cartas com raridade `muito raro` são exibidas após o filtro.
+  - Será validado se todas as cartas são exibidas quando o filtro de raridade está com a opção `todas` selecionada.
+  - Será validado se não renderiza nenhuma carta se não houver raridade correspondente.
+</details>
+
+---
+
+## 12. Crie o filtro de Super Trunfo
+
+<details><summary>Para filtrar por <strong>Super Trunfo</strong>, você deverá criar um campo do tipo <code>checkbox</code> com a <code>label</code> Super Trunfo e o atributo <code>data-testid="trunfo-filter"</code>:</summary>
+  
+  * Ao selecionar este `checkbox`, apenas a carta **Super Trunfo** deverá ser renderizada.
+  
+  * Enquanto o `checkbox` estiver com o atributo `checked`, ou seja, se estiver selecionado, os `inputs` dos filtros por nome e por raridade deverão ficar com o atributo `disabled`.
+
+  * Se o `checkbox` não estiver selecionado, as cartas devem ser renderizadas normalmente, seguindo apenas as regras dos filtros anteriores.
+
+  ![requisito-12](images/requisito-12.png)
+</details><br />
+
+<details>
+  <summary><strong>O que será verificado</strong></summary><br />
+  - Será validado se somente a carta de super trunfo é exibida quando esse filtro é selecionado.
+</details>
+
+---
+
+# Requisitos não avaliativos
+
+Você já criou o baralho do seu Tryunfo. Agora você pode criar uma funcionalidade para jogar com outras pessoas estudantes! Abaixo iremos apresentar uma **sugestão** de como essa funcionalidade pode ser criada! **Esses requisitos não serão avaliados pelo Evaluator**, portanto, fique livre para desenvolver da maneira que você achar melhor! Use os conhecimentos que você aprendeu e desenvolveu ao longo dos módulos anteriores e exerça a sua criatividade!
+
+<details><summary><strong>Regras do Jogo</strong></summary>
+
+  Antes de iniciar o desenvolvimento, vamos relembrar como funciona o jogo:
+
+  - Primeiramente, cada pessoa deve "pegar" uma carta aleatória do seu baralho.
+  - A primeira pessoa irá escolher um atributo para comparar com a carta da outra pessoa. Lembre-se que no Tryunfo os atributos podem ter nomes diferentes em cada baralho, por isso o ideal é se basear pela posição do atributo, ou seja, comparar o primeiro atributo da sua carta com o primeiro atributo da carta da pessoa rival.
+  - Ganha a rodada quem tiver o número maior no atributo escolhido.
+  - Ao término da rodada, cada pessoa deve "pegar" uma nova carta aleatória.
+  - A cada rodada é alternada a vez de quem escolhe o atributo para comparação.
+</details><br />
+
+<details><summary><strong>O que será necessário</strong></summary>
+
+  Para poder jogar, será necessário ter desenvolvido os seguintes passos:
+
+   1) Criar baralho com N cartas (já desenvolvido nos requisitos anteriores).
+   2) Criar uma função que embaralhe as cartas e renderize a primeira carta do baralho.
+   3) Criar um botão para renderizar a próxima carta do baralho.
+   4) Na ultima carta, ter um botão para recomeçar o jogo, embaralhando novamente.
+</details>
+
+---
+
+## 13. Iniciar o jogo
+
+  * Crie um botão com o texto `Jogar`;
+
+  * Crie um novo estado na sua aplicação, que receberá as cartas do seu baralho em ordem aleatória;
+
+  * Ao clicar no botão `Jogar`, este novo estado deve receber as cartas que estão salvas no seu baralho, mas em ordem **aleatória**
+  veja neste link [como implementar uma função que embaralha um array](https://flaviocopes.com/how-to-shuffle-array-javascript/).
+
+  * Crie um novo estado na sua aplicação que irá controlar a posição no array da carta que será renderizada.
+  
+  * Para renderizar na página, você pode utilizar **renderização condicional** para mostrar a carta apenas quando um jogo estiver em andamento.
+
+  **Lembre-se que há várias formas possíveis para montar esta função. Isso é apenas uma sugestão.**
+
+---
+
+## 14. Criar botão Próxima Carta
+
+  * Após clicar em `Jogar` e embaralhar as cartas existentes, exiba a primeira carta na tela, ou seja, a carta que está na posição `0` do array.
+
+  * Exiba um botão com o texto `Próxima carta`.
+
+  * Ao clicar no botão "Próxima carta", a próxima carta do seu baralho "embaralhado" deve ser renderizada. Você pode usar o estado criado no requisito anterior e incrementá-lo em cada rodada.
+
+<details><summary>Imagem Exemplo:</summary>
+
+  ![requisito-14](images/requisito-14.png)
+</details>
+
+---
+
+## 15. Recomeçar o jogo
+
+  * Quando a última carta do baralho estiver sendo renderizada, ou seja, quando você estiver na última posição do array de cartas embaralhadas, o botão "Próxima carta" não deve ser renderizado na tela.
+
+  * Um novo botão deve ser exibido com o texto `Embaralhar cartas`. 
+  
+  * Ao clicar no botão `Embaralhar cartas` o baralho deve ser embaralhado novamente e o estado que controla a posição da carta exibida deve ser `0` novamente.
+
+<details><summary>Imagem Exemplo:</summary>
+
+  ![requisito-15](images/requisito-15.png)
+</details>
+
+---
