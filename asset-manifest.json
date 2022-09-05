@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/TrybeWarts/static/css/main.dbd1db21.css",
+    "main.js": "/TrybeWarts/static/js/main.1fd8216a.js",
+    "index.html": "/TrybeWarts/index.html",
+    "main.dbd1db21.css.map": "/TrybeWarts/static/css/main.dbd1db21.css.map",
+    "main.1fd8216a.js.map": "/TrybeWarts/static/js/main.1fd8216a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dbd1db21.css",
+    "static/js/main.1fd8216a.js"
+  ]
+}
